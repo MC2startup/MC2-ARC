@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to root_path, :class=>'brand' do %>
+        MC²
+        <%= image_tag 'logo.png'%>
+      <% end %>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="#">孵化服务</a></li>
+          <li><a href="#">毕业团队</a></li>
+          <li><a href="#">关于我们</a></li>
+        </ul>
+        <ul class="nav user pull-right">
+          <li>
+            <%= link_to t('user.login'), new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to t('user.signup'), new_user_registration_path %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
