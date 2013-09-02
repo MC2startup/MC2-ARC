@@ -1,0 +1,17 @@
+@import "variables";
+
+.login-container{
+  padding: 150px 0px 40px 0px;
+  background-color: $lgray
+}
+
+.sign-in-container{
+  padding: 20px 0px;
+  border-right: 1px solid $dgray;
+  min-height: 200px;
+  margin-right: 50px;
+}
+
+.remember-me{
+  display: inline-block;
+}
