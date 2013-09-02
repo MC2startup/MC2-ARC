@@ -1,0 +1,37 @@
+<div class='login-container'>
+  <div class='row-fluid'>
+    <div class='span4 offset2'>
+      <div class="sign-in-container">
+        <h4>没有账号？<%= link_to '马上注册！', new_user_registration_path %></h4>
+      </div>
+    </div>
+
+    <div class='span4'>
+      <div class='sign-up-container'>
+        <h2>登录MC²</h2>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <div class='control-group'>
+            <%= f.email_field :email, :class=>'mc2-input', :autofocus => true, :placeholder => "邮箱"%>
+          </div>
+
+          <div class='control-group'>
+            <%= f.password_field :password, :class=>'mc2-input', :placeholder => "密码" %>
+          </div>
+
+          <div class='control-group'>
+            <% if devise_mapping.rememberable? -%>
+              <div><%= f.check_box :remember_me, :class=>'mc2-input' %> <%= f.label :remember_me, :class=>'remember-me' %></div>
+            <% end -%>
+          </div>
+
+          <div class='control-group'>
+            <%= f.submit "登录", :class=>"btn btn-lg btn-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
