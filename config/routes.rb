@@ -1,5 +1,9 @@
 Mc2::Application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    get 'edit_profile', :to=>"registrations#edit_profile"
+    post 'update_profile', :to=>"registrations#update_profile"
+  end
 
   resources :posts
   root :to => 'home#index'

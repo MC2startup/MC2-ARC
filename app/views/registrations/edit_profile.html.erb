@@ -1,0 +1,30 @@
+<div class='login-container'>
+  <div class='row-fluid'>
+    <div class='span4 offset4'>
+      <h3>完善您的资料<span class="username"></span></h3>
+      <div id="editprofile" class="row-fluid">
+        <%= form_for current_user, :url => update_profile_path, :method=>:post, :html => { :multipart => true } do |f|%>
+          <a class="uploadavatar">
+            <img src="">
+            <span>上传头像</span>
+            <%= f.file_field :avatar %>
+          </a>
+          <div class='control-group'>
+            <%= f.text_field :mobile, :placeholder => "手机" %>
+          </div>
+          <div class='control-group'>
+            <%= f.text_field :weibo, :placeholder => "微博"%>
+          </div>
+          <div class='control-group'>
+            <%= f.text_field :qq, :placeholder => "qq"%>
+          </div>
+
+          <div class="control-group">
+            <%= f.submit "确认", :class=>'btn btn-success'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
