@@ -19,7 +19,7 @@
 }
 .sidebar .nav-head .logo{
   float: left;
-  background: url(../img/logo.png) no-repeat;
+  background: image-url('logo.png'); no-repeat;
   width: 79px;
   height: 35px;
   margin: 12px 0 0 15px;
