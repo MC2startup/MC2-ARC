@@ -1,11 +1,15 @@
 Mc2::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'registrations'}
+
   devise_scope :user do
     get 'edit_profile', :to=>"registrations#edit_profile"
     post 'update_profile', :to=>"registrations#update_profile"
   end
 
-  resources :posts
+  resources :posts do
+    post 'search', :on=>:collection
+  end
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

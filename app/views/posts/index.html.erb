@@ -1,0 +1,18 @@
+<%= render 'sidebar', :user=>current_user %>
+
+<div class="content">
+  <div class="content-header">
+    <h1><%#= @search ? "搜索："+@search : "项目库" %>
+      项目库
+    </h1>
+    <%= render 'filter'%>
+  </div>
+  <div class="content-wrap">
+    <ul class="gifts">
+      <%= render 'list', { :posts => @posts } %>
+      <li class="loadingmore"><i class="icon-refresh"></i>读取更多...</li>
+    </ul>
+  </div>
+</div>
+
+

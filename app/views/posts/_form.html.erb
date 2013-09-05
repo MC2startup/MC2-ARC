@@ -1,0 +1,45 @@
+<%= form_for(@post, :html=>{:enctype=>"multipart/form-data", :class => "form-horizontal"}) do |f| %>
+  <h2>发表新项目</h2>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :title, :class=>'control-label'%>
+      <div class="controls">
+        <%= f.text_field :title, :class => "projectname", :id => "inputName", :placeholder => "不超过25字", :datatype=>"*", :nullmsg=>"请输入项目名称" %>
+        <span class="help-block">一个响亮的名字能让你的项目更吸引人</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :stage, :class=>'control-label'%>
+      <div class='controls'>
+        <%= f.select :stage_num, stage_list, {} %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :brief_intro, :class=>'control-label'%>
+      <div class="controls">
+        <%= f.text_area :brief_intro, :rows => 3, :id => "inputExcerpt" %>
+        <span class="help-block"><140字。假如发微博，你会怎么介绍你的项目？</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :content, :class=>'control-label'%>
+      <div class="controls">
+        <%= f.text_area :content, :id=>"projectdetail" do%>
+          <p>以下是一些建议内容：</p>
+          <h3>详细说明</h3>
+          <p>分享下你的项目特征、你即将要做的事情。更多的图片会使项目看起来真实、生动。</p>
+          <h3>风险与挑战</h3>
+          <p>完成这个项目，你们将面临的困难和挑战有哪些？你准备怎么克服它们？</p>
+          <h3>计划</h3>
+          <p>给你的项目设定一些里程碑，和达到这个里程碑的时间点。</p>
+          <h3>关于你们</h3>
+          <p>一个项目的成功除了项目足够好，还需要它的主人很优秀。告诉大家为什么你能够做好这个项目，自信地。</p>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+
+<% end %>

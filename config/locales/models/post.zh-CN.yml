@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+      attributes:
+        post:
+          title: 项目名称
+          content: 详细描述
+          stage: 目前阶段
+          brief_intro:

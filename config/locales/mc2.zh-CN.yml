@@ -6,3 +6,14 @@ zh-CN:
   user:
     signup: 注册
     login: 登录
+    logout: 退出
+  post:
+    title: 项目库
+
+  stage:
+    idea: 创意
+    developing: 研发中
+    comming_soon: 即将推出
+    stopped: 已停止
+    operating: 运营中
+

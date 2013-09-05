@@ -1,0 +1,67 @@
+<div class="sidebar">
+  <div class="nav-head">
+    <%= link_to root_path, :class=>'logo' do %>
+      <%= image_tag 'logo.png'%>
+    <% end %>
+    <ul>
+      <li class='active'>
+        <%= link_to root_path do %>
+          <i class="icon-white-home"></i>
+        <% end %>
+      </li>
+      <!-- <li>
+        <a href="#" class="message" title="消息列表">
+          <i class="icon-white-bullhorn"></i>
+          <span></span>
+        </a>
+      </li> -->
+      <li class="active">
+        <a href="/blog/profile" class="user" title="<%#= current_user.login %>的档案">
+          <%= image_tag user.avatar.url(:thumb) %>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="sidebar_Home" class="nav-content">
+    <%= form_tag search_posts_path, :method=>'post', :class=>'form-search' do%>
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon-white-search"></i></span>
+        <input class="search-input" type="text" placeholder="搜索" name="search[searchstring]">
+      </div>
+    <% end %>
+
+    <h5>浏览</h5>
+    <ul class="menu">
+      <li class="">
+        <a href="/" class="active">
+          <i class="icon-white-drawer"></i>
+          <span>项目库</span>
+        </a>
+      </li>
+
+      <li class="">
+        <a href="/blog/articles/myfollow" class="active">
+          <i class="icon-white-signup"></i>
+          <span>关注的项目</span>
+        </a>
+      </li>
+    </ul>
+
+    <h5>我的项目
+      <%= link_to '+', new_post_path, :title=>'发表新项目'%>
+    </h5>
+    <ul class="follow">
+      <% if @my_posts.empty? %>
+        <li class="addnewtips"><span>发表你的项目，让校友导师一起帮助你！<div class="arrow"></div></a></li>
+      <% else %>
+        <% @my_posts.each do |post| %>
+          <li class=""><a href="/blog/articles/show/<%= post.id %>"><span class="dot dot-<%#= post.category.name %>"></span><%#= myarticle.title%></a></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <%= render 'footer' %>
+</div>
